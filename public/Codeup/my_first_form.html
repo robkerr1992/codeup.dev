@@ -1,0 +1,88 @@
+<!DOCTYPE <!DOCTYPE html>
+<html>
+<head>
+	<title>MY First HTML Form</title>
+</head>
+<body>
+	<h2>User Login</h2>
+	<form method="POST" action="hhttp://requestb.in/wbgbp8wb">
+    	<p>
+        	<label for="username">Username</label>
+        	<input id="username" name="username" type="text" placeholder="Enter your username">
+    	</p>
+    	<p>
+        	<label for="password">Password</label>
+        	<input id="password" name="password" type="password" placeholder="and your password">
+    	</p>
+    	<p>
+        	<button type="submit">Login</button>
+    	</p>
+	</form>
+
+	<h2>Compose an email</h2>
+	<form method="POST" action="http://requestb.in/wbgbp8wb">
+		<p>
+			<label for="to">To</label>
+			<input id="to" name="to" type="text" placeholder="Who is this to?">
+		</p>
+		<p>
+			<label for="from">From</label>
+			<input id="from" name="from" type="text" placeholder="Who is this from?">
+		</p>
+		<p>
+			<label for="subject">Subject</label>
+			<input id="subject" name="subject" type="text" placeholder="Do we have a subject?">
+		</p>
+		<p>
+			<label for="body">Body</label>
+			<textarea id="body" name="body" type="text" placeholder="Whats on your mind?"></textarea>
+		</p>
+		<input type="checkbox" id="saveacopy" name="saveacopy" value="yes" checked>Save a Copy?</input>
+		<input type="submit" value="Submit">
+	</form>
+	<form method="POST" action="http://requestb.in/14ryx2h1">
+		<label for=""></label>
+	</form>
+	<h2>Multiple Choice Test</h2>
+	<form method="POST" action="http://requestb.in/wbgbp8wb">
+		<p>You know ____, Jon Snow. 
+		<label>
+			<input type="radio" name="q1" value="Nothing">
+			Nothing
+		</label>
+		<label>
+			<input type="radio" name="q1" value="Everything">
+			Everything
+		</label>
+		<p>Who is the Mad King?</p>
+		<label>
+			<input type="radio" name="q2" value="Robert Baratheon">
+			Robert Baratheon
+		</label>
+		<label>
+			<input type="radio" name="q2" value="Joffrey Baratheon">
+			Joffrey Baratheon
+		</label>
+		<label>
+			<input type="radio" name="q2" value="Rhaegar Targaryen">
+			Rhaegar Targaryen
+		</label>
+		<p>Which of the Stark children are still alive?</p>
+		<label> <input type="checkbox" id="c1" name="starkkids[]" value="Jon Snow"></input>Jon Snow</label>
+		<label> <input type="checkbox" id="c2" name="starkkids[]" value="Arya Stark"></input>Arya Stark</label>
+		<label> <input type="checkbox" id="c3" name="starkkids[]" value="Sansa Stark"></input>Sansa Stark</label>
+		<label> <input type="checkbox" id="c4" name="starkkids[]" value="Robb Stark"></input>Robb Stark</label>
+		<label> <input type="checkbox" id="c5" name="starkkids[]" value="Rickon Stark"></input>Rickon Stark</label>
+		<label> <input type="checkbox" id="c6" name="starkkids[]" value="Brandon Stark"></input>Brandon Stark</label>
+		<input type="submit" value="Submit">
+	</form>
+	<h2>Select Testing</h2>
+	<form>
+		<label for="q4">Did Oberyn kill the Mountain?</label>
+		<select id="q4" name="q4[]">
+			<option value="1">Yes</option>
+			<option value="0" selected>No</option>
+		</select>
+	</form>
+</body>
+</html>

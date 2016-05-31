@@ -1,0 +1,35 @@
+h1 {
+	color: blue;
+	text-decoration: underline;
+}
+
+body {
+	background-color: green;
+	font-family: 'Open Sans', sans-serif;
+}
+
+li {
+	list-style-type: upper-alpha;
+}
+
+table {
+	background-image: url(/img/eyeofsauron.jpg);
+}
+
+td {
+	padding: 1px;
+
+}
+
+tr {
+	font-size: 1em;
+}
+
+a:hover {
+	color: yellow;
+}
+
+a:visited {
+	outline-color: black
+	font-size: 2em;
+}
