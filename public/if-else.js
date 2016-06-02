@@ -4,8 +4,8 @@ var grade1 = 70;
 var grade2 = 80;
 var grade3 = 95;
 var average = 3;
-
-if ((grade1 + grade2 + grade3)/average >= 80){
+var gradesCombined = grade1 + grade2 + grade3
+if (gradesCombined/average >= 80){
 	console.log("You're awesome!");
 } else {
 	console.log("You need to practice, ya'll.");
@@ -15,41 +15,47 @@ if ((grade1 + grade2 + grade3)/average >= 80){
 var cameron = 180;
 var ryan = 250;
 var george = 320;
+var discount = .65;
 var newTotal;
 
 if (cameron>=200) {
-	newTotal = cameron * .65;
-	console.log("Cameron's new total is " + newTotal);
+	newTotal = cameron * discount;
+	console.log("Cameron's discounted total is $" + newTotal + ".");
 
 
 } else if (cameron<200) {
 	newTotal = 200 - cameron;
-	console.log("Cameron's new total is " + newTotal);
+	console.log("Cameron needs to spend $" + newTotal + " more.");
 
 }
 
+
 if (ryan>=200) {
-	newTotal = ryan * .65;
-	console.log("Ryan's new total is " + newTotal);
+	newTotal = ryan * discount;
+	console.log("Ryan's discounted total is $" + newTotal + ".");
 
 
 } else if (ryan<200) {
 	newTotal = 200 - ryan;
-	console.log("Ryan's new total is " + newTotal);
+	console.log("Ryan needs to spend $" + newTotal + " more.");
 
 }
 
+
 if (george>=200) {
-	newTotal = george * .65;
-	console.log("George's new total is " + newTotal);
+	newTotal = george * discount;
+	console.log("George's discounted total is $" + newTotal + ".");
 
 
 } else if (george<200) {
 	newTotal = 200 - george;
-	console.log("George's new total is " + newTotal);
+	console.log("George needs to spend $" + newTotal + " more.");
 
 }
 
 var flipACoin = Math.floor(Math.random()* 2);
 
-console.log((flipACoin == 1) ? "Buy a House!" : "Buy a Car!");
+console.log((flipACoin) ? "Buy a House you crazy mother!" : "Jk, Buy a Car! Way less crazy...");
+
+
+

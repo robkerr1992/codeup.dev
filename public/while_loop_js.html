@@ -6,17 +6,30 @@
 <body>
 	<script type="text/javascript">
 		var allCones = Math.floor(Math.random() * 50) + 50;
-		var cones = Math.floor(Math.random() * 5) + 1;
 		var numSold = 0;
-		while (allCones>cones) {
+		do {
+			var cones = Math.floor(Math.random() * 5) + 1;
 			numSold += cones;
-			console.log("I have " + allCones + " cones total. I sold " + cones + "! and " + numSold + " total cones!");
+			console.log("I have " + allCones + " cones total. I sold " + cones + "! and sold " + numSold + " total cones!");
 			allCones -= cones;
-		}		if (allCones < cones){
-			console.log("I only have " + allCones + ". Sucks for you.");
 
+			if (allCones < cones && allCones>0){
+			console.log("I only have " + allCones + ". Sucks for you.");
 		}
+		} while (allCones>cones);
 		console.log("I'm all out of cones. Get off my lawn!");
+		// while (allCones>0) {
+		// 	var cones = Math.floor(Math.random() * 5) + 1;
+		// 	numSold += cones;
+		// 	console.log("I have " + allCones + " cones total. I sold " + cones + "! and " + numSold + " total cones!");
+		// 	allCones -= cones;
+		// }		if (allCones < cones && allCones>0){
+		// 	console.log("I only have " + allCones + ". Sucks for you.");
+
+		// }
+		
 	</script>
 </body>
 </html>
+
+

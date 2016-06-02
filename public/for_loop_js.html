@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>blahblah</title>
+</head>
+<body>
+ 	<script type="text/javascript">
+ 		var message;
+		for (var i = 1; i <= 10; i++) {		
+			message = "";			
+			for (var j = 1; j <= i; j++) {				
+				if ( i == 10) {
+				message = message + 0;
+				} else {
+					message = message + i
+				}
+			}
+			console.log(message);
+		}
+	</script>
+
+
+
+	<script type="text/javascript">
+		var num = Math.floor(Math.random() * 10) + 1;
+		for (var i = 0; i <= 10; i++) {
+			console.log(num + "x" + i + "=" + (i*num));	
+		}
+
+	</script>
+
+	<script type="text/javascript">
+		for (var i = 0; i <= 10; i++) {
+			var num = Math.floor(Math.random() * 180) + 20;
+			if (num % 2 == 1) {
+				console.log(num + " is odd!");
+
+			} else {
+				console.log(num + " is even!");
+			}
+		}
+	</script>
+
+	<script type="text/javascript">
+		for (var i = 100; i > 0; i-=5) {
+			console.log(i);
+		}
+	</script>
+</body>
+</html>
+
+
