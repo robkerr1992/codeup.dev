@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<script type="text/javascript">
+	
+	do {
+		var num = Math.floor((Math.random()*50)+1);
+	} while (num % 2 == 0); 
+		console.log(num);
+	for (i = 1; i <= 50; i ++) 
+	{
+		if (num % 2 == 0) {
+			continue;
+
+		} else if (num == i) {
+			console.log("Nope!");
+		}
+		console.log(i);
+	}
+
+
+</script>
+
+</body>
+</html>
