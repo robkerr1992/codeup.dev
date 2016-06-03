@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+
+</head>
+<body>
+	<script type="text/javascript">
+		// problem #1
+		function concatenate (message, i) {
+			return message + i;
+
+		} 
+		function zeroes (message) {
+			return message + 0;
+		}
+
+ 		function hardProblem () {
+ 		var message;
+		for (var i = 1; i <= 10; i++) {		
+			message = "";			
+			for (var j = 1; j <= i; j++) {				
+				if ( i == 10) {
+				message = zeroes(message);
+				} else {
+					message = concatenate (message, i);
+				}
+			}
+			console.log(message);
+		}
+		}
+		hardProblem ();
+		console.log("I did it!")
+
+		// problem # 2
+		function multiply (a, b) {
+			return (a*b);
+		}
+
+		function timesTables () {
+		var num = Math.floor(Math.random() * 10) + 1;
+		for (var i = 0; i <= 10; i++) {
+			console.log(num + "x" + i + "=" + multiply (i ,num));	
+		}
+		}
+
+		timesTables ();
+
+
+		// problem #3
+		function odd(a) {
+			console.log(a + " is odd!");
+		}
+
+		function even(b) {
+			console.log(b + " is even!");
+		}
+		function ranNum (c) {
+			var c = Math.floor(Math.random() * 180) + 20;
+			return c;
+
+		}
+
+
+		for (var i = 0; i <= 10; i++) {
+			var num = ranNum(num);
+			if (num % 2 == 1) {
+				odd(num);
+
+			} else {
+				even(num);
+			}
+		}
+
+
+
+	</script>
+
+</body>
+</html>
