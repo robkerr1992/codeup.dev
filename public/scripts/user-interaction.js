@@ -3,7 +3,7 @@
 
 "use strict";
 do {
-	var name = prompt("What is you name?")
+	var name = prompt("What is you name?");
 } while (name == "");
 
 
