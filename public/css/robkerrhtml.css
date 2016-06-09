@@ -23,8 +23,8 @@
 	margin-bottom: 25px;
 }
 .landing-page {
-	background-color: black;
-	margin-top: 5%;
+	background-image: url(/img/jungle-white-overlay.jpg);
+	/*margin-top: 5%;*/
 }
 .portfolio,
 .contact-form-body,
@@ -51,6 +51,97 @@
 
 .portrait {
 	padding: 20px 10px 30px 0px;
+}
+.bannerlp {
+    position: absolute;
+    background-color: transparent;
+    width: 100%;
+    height: 20%;
+    padding: 0;
+}
+.bannerlp h2 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-top: 5px;
+    color: black;
+}
+.bannerlp h3 {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    color: black;
+}
+
+.lp-div1 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 80%;
+    border: 4px solid black;
+    border-right: 2px solid black;
+    width: 50%;
+    margin-left: 0px;
+}
+
+.lp-div1 h3 {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-top: 5px;
+    color: black;
+}
+
+.lp-div2 {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    height: 80%;
+    border: 4px solid black;
+    border-left: 2px solid black;
+    width: 50%;
+    margin-right: 0px;
+}
+
+.lp-div2 h1 {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    font-size: 50px;
+    color: black;
+
+}
+
+.lp-div2 h1:hover {
+    color: white;
+}
+
+.bannercya {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background-color: white;
+    width: 100%;
+    height: 20%;
+    padding: 0;
+}
+
+.bannercya h1 {
+    position: absolute;
+    bottom: 0;
+    right: 0; 
+}
+
+.choose-your-adventure {
+    background-image: url("/img/mans-vs-mountain-with-logo.jpg" );
+    position: absolute;
+}
+
+
+#enter-btn {
+    position: relative;
+    left: 750%;
+    top: 225px;
 }
 /*NavBar CSS*/
 /*
