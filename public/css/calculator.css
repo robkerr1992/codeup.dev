@@ -1,0 +1,149 @@
+#calculator-main-container {
+	position: absolute;
+	top: 30%;
+	right: 42%;	
+}
+
+#calc-header {
+	position: absolute;
+	top: 10%;
+	right: 40%;
+}
+
+#main-header {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	top: 8%;
+	background-color: black;
+}
+
+
+
+#operand {
+	float: left;
+	width: 22px;
+
+
+}
+
+#firstInput {
+	float: left;
+	width: 100px;
+
+}
+
+#secondInput {
+	float: left;
+	width: 100px;
+
+}
+
+.smallBtn {
+	width: 60px;
+	height: 60px;
+	margin-top: 2px;
+}
+
+
+#number1 {
+	background-image: url('/img/calculatorImages/1.jpg');
+	clear: left;
+	float: left;
+}
+
+#number2 {
+	background-image: url('/img/calculatorImages/2.jpg');
+	float: left;
+}
+
+#number3 {
+	background-image: url('/img/calculatorImages/3.jpg');
+	float: left;
+}
+
+#additionBtn {
+	background-image: url('/img/calculatorImages/add.jpg');
+	float: left;
+}
+
+#number4 {
+	background-image: url('/img/calculatorImages/4.jpg');
+	clear: left;
+	float: left;
+}
+
+#number5 {
+	background-image: url('/img/calculatorImages/5.jpg');
+	float: left;
+}
+
+#number6 {
+	background-image: url('/img/calculatorImages/6.jpg');
+	float: left;
+}
+
+#subtractBtn {
+	background-image: url('/img/calculatorImages/subtract.jpg');
+	float: left;
+}
+
+#number7 {
+	background-image: url('/img/calculatorImages/7.jpg');
+	clear: left;
+	float: left;
+}
+
+#number8 {	
+	background-image: url('/img/calculatorImages/8.jpg');
+	float: left;
+
+}
+
+#number9 {	
+	background-image: url('/img/calculatorImages/9.jpg');
+	float: left;
+
+}
+
+#multiplyBtn {
+	background-image: url('/img/calculatorImages/multiply.jpg');
+	float: left;
+}
+
+#number0 {	
+	background-image: url('/img/calculatorImages/0.jpg');
+	clear: left;
+	float: left;
+
+}
+
+#decimalBtn {
+	background-image: url('/img/calculatorImages/decimal.jpg');
+	float: left;
+}
+
+#clearBtn {
+	background-image: url('/img/calculatorImages/clear.jpg');
+	float: left;
+}
+
+#divideBtn {
+	background-image: url('/img/calculatorImages/divide.jpg');
+	float: left;
+}
+
+#equalsBtn {
+	background-image: url('/img/calculatorImages/equals.jpg');
+	clear: left;
+	float: left;
+	width: 180px;
+	height: 60px;
+	margin-top: 2px;
+}
+
+#backspaceBtn {
+	background-image: url('/img/calculatorImages/backspace.jpg');
+	float: left;
+}
