@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		.invisible {
+			display: none;
+		}
+	</style>
+</head>
+<body>
+<div id="clicker">Click me</div>
+	<dl>
+		<dt>Hey guess what</dt>
+		<dd class="invisible">there are at LEAST ten nantional parks</dd>
+		<dt>Cool right?</dt>
+		<dd class="invisible">Yeah, super cool.</dd>
+		<dt>I'm just filling this up</dt>
+		<dd class="invisible">with stuff</dd>
+		<dt>And more stuff</dt>
+		<dd class="invisible">and with stuff for your stuff</dd>
+		<dt>Lots of stuff</dt>
+		<dd class="invisible">More terms</dd>
+		<dt>blahblahblah</dt>
+		<dd class="invisible">yadayadayada</dd>
+		<dt>Question #8</dt>
+		<dd class="invisible">woops i mean #7</dd>
+		<dt>This ones the real</dt>
+		<dd class="invisible">#8</dd>
+		<dt>rubber ducks</dt>
+		<dd class="invisible">plumber trucks</dd>
+		<dt>caroling sucks</dt>
+		<dd class="invisible">emancipated buck</dd> 
+	</dl>
+	<h3>List 1</h3>
+	<ul>
+		<li class="bold">blahblahblah</li>
+		<li>yadayada</li>
+		<li>stoptalking</li>
+	</ul>
+	<h3>List 2</h3>
+	<ul>
+		<li class="bold">im</li>
+		<li>a</li>
+		<li>list</li>
+	</ul>
+	<h3>List 3</h3>
+	<ul>
+		<li class="bold">o luk</li>
+		<li>such list</li>
+		<li>much wow</li>
+	</ul>
+
+
+	<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+	<script type="text/javascript">
+		// with a clas selector
+		$('ul').children('.bold').css('font-weight', 'bold');
+		// without a class selector
+		$('ul').each(function(index, element){
+			$(element).children().first().css('font-weight', 'bold');
+		})
+
+		$('#clicker').on('click', function() {
+		$('dd').toggleClass('invisible');
+			
+		});
+
+		$('li').on('click', function() {
+		$(this).parent('ul').addClass('invisible');
+			
+		});
+	</script>
+</body>
+</html>
