@@ -44,6 +44,7 @@
 	width: 60px;
 	height: 60px;
 	margin-top: 2px;
+	margin-right: 2px;
 }
 
 
@@ -53,8 +54,19 @@
 	float: left;
 }
 
+#number1:hover {
+	background-image: url('/img/calculatorImages/1pressed.png');
+	clear: left;
+	float: left;
+}
+
 #number2 {
 	background-image: url('/img/calculatorImages/2.jpg');
+	float: left;
+}
+
+#number2:hover {
+	background-image: url('/img/calculatorImages/2pressed.png');
 	float: left;
 }
 
@@ -63,8 +75,18 @@
 	float: left;
 }
 
+#number3:hover {
+	background-image: url('/img/calculatorImages/3pressed.png');
+	float: left;
+}
+
 #additionBtn {
 	background-image: url('/img/calculatorImages/add.jpg');
+	float: left;
+}
+
+#additionBtn:hover {
+	background-image: url('/img/calculatorImages/add-pressed.png');
 	float: left;
 }
 
@@ -74,8 +96,19 @@
 	float: left;
 }
 
+#number4:hover {
+	background-image: url('/img/calculatorImages/4pressed.png');
+	clear: left;
+	float: left;
+}
+
 #number5 {
 	background-image: url('/img/calculatorImages/5.jpg');
+	float: left;
+}
+
+#number5:hover {
+	background-image: url('/img/calculatorImages/5pressed.png');
 	float: left;
 }
 
@@ -84,14 +117,31 @@
 	float: left;
 }
 
+#number6:hover {
+	background-image: url('/img/calculatorImages/6pressed.png');
+	float: left;
+}
+
 #subtractBtn {
 	background-image: url('/img/calculatorImages/subtract.jpg');
 	float: left;
 }
 
+
+#subtractBtn:hover {
+	background-image: url('/img/calculatorImages/subtract-pressed.png');
+	float: left;
+}
+
+
 #number7 {
 	background-image: url('/img/calculatorImages/7.jpg');
 	clear: left;
+	float: left;
+}
+
+#number7:hover {
+	background-image: url('/img/calculatorImages/7pressed.png');
 	float: left;
 }
 
@@ -101,14 +151,29 @@
 
 }
 
+#number8:hover {
+	background-image: url('/img/calculatorImages/8pressed.png');
+	float: left;
+}
+
 #number9 {	
 	background-image: url('/img/calculatorImages/9.jpg');
 	float: left;
 
 }
 
+#number9:hover {
+	background-image: url('/img/calculatorImages/9pressed.png');
+	float: left;
+}
+
 #multiplyBtn {
 	background-image: url('/img/calculatorImages/multiply.jpg');
+	float: left;
+}
+
+#multiplyBtn:hover {
+	background-image: url('/img/calculatorImages/multiply-pressed.png');
 	float: left;
 }
 
@@ -119,8 +184,18 @@
 
 }
 
+#number0:hover {
+	background-image: url('/img/calculatorImages/0pressed.png');
+	float: left;
+}
+
 #decimalBtn {
 	background-image: url('/img/calculatorImages/decimal.jpg');
+	float: left;
+}
+
+#decimalBtn:hover {
+	background-image: url('/img/calculatorImages/decimal-pressed.png');
 	float: left;
 }
 
@@ -129,8 +204,18 @@
 	float: left;
 }
 
+#clearBtn:hover {
+	background-image: url('/img/calculatorImages/clear-pressed.png');
+	float: left;
+}
+
 #divideBtn {
 	background-image: url('/img/calculatorImages/divide.jpg');
+	float: left;
+}
+
+#divideBtn:hover {
+	background-image: url('/img/calculatorImages/divide-pressed.png');
 	float: left;
 }
 
@@ -138,7 +223,17 @@
 	background-image: url('/img/calculatorImages/equals.jpg');
 	clear: left;
 	float: left;
-	width: 180px;
+	width: 184px;
+	height: 60px;
+	margin-top: 2px;
+	color: black;
+}
+
+#equalsBtn:hover {
+	background-image: url('/img/calculatorImages/equals-pressed.png');
+	clear: left;
+	float: left;
+	width: 184px;
 	height: 60px;
 	margin-top: 2px;
 }
@@ -146,4 +241,11 @@
 #backspaceBtn {
 	background-image: url('/img/calculatorImages/backspace.jpg');
 	float: left;
+	margin-left: 2px;
+}
+
+#backspaceBtn:hover {
+	background-image: url('/img/calculatorImages/backspace-pressed.png');
+	float: left;
+	margin-left: 2px;
 }

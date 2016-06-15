@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+<p id="para">blahblahblah</p>
+
+
+
+
+
+
+	<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+	<script type="text/javascript">
+
+
+	$(document).ready(function() {
+		var $paragraph = $('#para')
+		console.log($paragraph.text());
+	});
+
+	//id selector
+	$('#codeup')
+
+	// class selector
+	$('.codeup')
+
+	// element/tag selector
+	$('p')
+	$('span')
+	$('div')
+
+	// combination slector 
+	// article.clickbait p
+	$('article.clickbait p')
+	$('')
+
+	// multiple selector
+	$('p, span, div')
+	$('article, #codeup, .codeup')
+
+
+	</script>
+</body>
+</html>

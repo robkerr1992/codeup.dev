@@ -10,7 +10,7 @@ var backspace = document.getElementById('backspaceBtn');
 var numberSpitter = function () {
 	var numberSelected = this.getAttribute('data-value');
 	if (operandInput.value !== "") {
-		numberSelected = this.getAttribute('data-value');
+		// numberSelected = this.getAttribute('data-value');
 		secondInput.value += numberSelected;
 	} else {
 		firstInput.value += numberSelected;
@@ -22,20 +22,20 @@ var operandSpitter = function () {
 }
 var processNumbers = function() {
 	if (operandInput.value == '+') {
-		firstInput.value = (parseInt(firstInput.value)) + (parseInt(secondInput.value));
+		firstInput.value = ((parseFloat(firstInput.value)) + (parseFloat(secondInput.value))).toFixed(4);
 		operandInput.value = "";
 		secondInput.value = "";
 	} else if (operandInput.value == '-') {
-		firstInput.value = (parseInt(firstInput.value)) - (parseInt(secondInput.value));
+		firstInput.value = ((parseFloat(firstInput.value)) - (parseFloat(secondInput.value))).toFixed(4);
 		operandInput.value = "";
 		secondInput.value = "";
 	} else if (operandInput.value == '*') {
-		firstInput.value = (parseInt(firstInput.value)) * (parseInt(secondInput.value));
+		firstInput.value = ((parseFloat(firstInput.value)) * (parseFloat(secondInput.value))).toFixed(4);
 		operandInput.value = "";
 		secondInput.value = "";
 
 	} else if (operandInput.value == '/') {
-		firstInput.value = (parseInt(firstInput.value)) / (parseInt(secondInput.value));
+		firstInput.value = ((parseFloat(firstInput.value)) / (parseFloat(secondInput.value))).toFixed(4);
 		operandInput.value = "";
 		secondInput.value = "";
 	}
@@ -46,9 +46,13 @@ var clearAllFields = function () {
 	secondInput.value = ""
 }
 var decimalPlacer = function () {
-	if (operandInput.value == "" && firstInput.value.indexOf('.') == -1) {
+	if (operandInput.value == "" && firstInput.value.indexOf('.') == -1 && firstInput.value == "") {
+		firstInput.value = '0.';
+	} else if (operandInput.value == "" && firstInput.value.indexOf('.') == -1) {
 		firstInput.value += '.';
-	} if (operandInput.value !== "" && secondInput.value.indexOf('.') == -1) {
+	} else if (operandInput.value !== "" && secondInput.value.indexOf('.') == -1 && secondInput.value == "") {
+		secondInput.value = '0.';
+	} else if (operandInput.value !== "" && secondInput.value.indexOf('.') == -1) {
 		secondInput.value += '.';
 	}
 }
