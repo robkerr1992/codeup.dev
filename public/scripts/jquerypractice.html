@@ -2,6 +2,16 @@
 <html>
 <head>
 	<title></title>
+	<style type="text/css">
+	.box {
+		height: 400px;
+		width: 400px;
+		float: left;
+	}
+
+
+
+	</style>
 </head>
 <body>
 
@@ -12,8 +22,11 @@
 		<li class="codeup">more items</li>
 		<li class="codeup">oh look another item</li>
 	</ul>
+	<input id="konami" type="textarea" placeholder="enter the secret code"></input>
 	<div id="codeup"></div>
-	
+	<a href="https://www.youtube.com/watch?v=5dbG4wqN0rQ"><div id="box1" class="box"></div></a>
+	<a href="https://www.youtube.com/watch?v=5dbG4wqN0rQ"></a><div id="box2" class="box"></div></a>
+	<a href="https://www.youtube.com/watch?v=5dbG4wqN0rQ"><div id="box3" class="box"></div></a>
 
 
 
@@ -27,11 +40,48 @@
 
 	<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
 	<script type="text/javascript">
-		var listItems = $('li');
-		listItems.css('font-size', '20');
-		var allOfEm = $('p, h1, li');
-		var aitchOnes = $('h1');
-		alert(aitchOnes.text());
+		var konamiCode = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65, 13];
+		var $box = $('.box');
+		var $body = $('body');
+		// $('h1').click(function () {
+		// 	$(this).css('background-color', 'green');
+		// });
+
+		// $('p').dblclick(function () {
+		// 	$(this).css('font-size', '18px');
+		// });
+
+		// $('li').hover (function(){
+		// 	$('li').css('color', 'red');
+		// },
+		// function () {
+		// 	$('li').css('color', 'white')
+		// }
+		// );
+		var i = 0
+		$('#konami').on('keydown', function() {
+
+			if (konamiCode[i] == event.keyCode){
+				console.log('keep going...');
+				i++;
+
+			} else {
+				i = 0;
+				$body.css('background-image', 'url("/img/moondoor1500.png")');
+				alert('Make him fly!!');
+
+			}
+
+			if (konamiCode.length == i) {
+				alert('You have entered God Mode!!!!!!');
+				$box.css('background-image', 'url("/img/kitten400x400.jpeg")');
+				alert('NOW KITTENS!!!!!!')
+				alert('Click the kittens...')
+
+
+			}
+		});
+
 
 
 
