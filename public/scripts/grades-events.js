@@ -1,54 +1,57 @@
-var nameArray = []
-var saveBtn = document.getElementById('save-name');
-var addGradeBtn = document.getElementById('add-grade');
-var calculateAverage = document.getElementById('calculate-average');
+//var nameArray = []
+//var saveButton = document.getElementById('save-name');
+var saveButton = $('#save-name');
+//var addGradeButton = document.getElementById('add-grade');
+var addGradeButton = $('#add-grade');
+//var calculateAverage = document.getElementById('calculate-average');
+var calculateAverageButton = $('#calculate-average');
 
 
 var removeDisable= function () {
-	if (document.getElementById("name").value !== "") {
-		addGradeBtn.removeAttribute('disabled');
-		calculateAverage.removeAttribute('disabled');
+	if ($("#name").val() !== "") {
+		addGradeButton.removeAttr('disabled');
+		calculateAverageButton.removeAttr('disabled');
 
 	}
 }
 
 var pushName = function () {
-	if (document.getElementById("name").value !== "") {
-		nameArray.push(document.getElementById("name").value);
-		document.getElementById('student-name').innerHTML = document.getElementById('name').value;
+	if ($("name").val() !== "") {
+		//nameArray.push($("#name").val());
+		$('#student-name').html($('#name').val());
 
 	}
 }
 
 var pushGrade = function () {
-	if (document.getElementById('subject').value !== "" && document.getElementById('grade').value !== "") {
-		var subjectName = document.getElementById('subject').value;
-		var subjectGrade = Number(document.getElementById('grade').value);
+	if ($('#subject').val() !== "" && $('#grade').val() !== "") {
+		var subjectName = $('#subject').val();
+		var subjectGrade = Number($('#grade').val());
 		student.addSubject(subjectName, subjectGrade);
 		var gradeEntry ='<tr><td>' + subjectName + '</td><td>' + subjectGrade + '</td></tr>';
-		document.getElementById('grades').innerHTML = gradeEntry + document.getElementById('grades').innerHTML;
-		document.getElementById('subject').value = "";
-		document.getElementById('grade').value = "";
+		$('#grades').html(gradeEntry + $('#grades').html());
+		$('#subject').val("");
+		$('#grade').val("");
 	}
 }
 
 var finalAverage = function () {
-	var studentAverage = document.getElementById('student-average');
+	//var studentAverage = $('#student-average');
 	// console.log(studentAverage.innerHTML);
 	// console.log(student.calculateAverage());
 
-	studentAverage.innerText = student.calculateAverage();
+	$('#student-average').text(student.calculateAverage());
 	// console.log(student.isAwesome());
 	// console.log(document.getElementById('student-awesome'));
 	// console.log(document.getElementById('student-practice'));
 
 
 	if (student.isAwesome()) {
-		document.getElementById('student-awesome').removeAttribute('class');
-		document.getElementById('student-practice').addAttribute('class', 'hidden');
+		$('#student-awesome').removeAttr('class');
+		$('#student-practice').addClass('hidden');
 	} else {
-		document.getElementById('student-practice').removeAttribute('class');
-		document.getElementById('student-awesome').addAttribute('class', 'hidden');
+		$('#student-practice').removeAttr('class');
+		$('#student-awesome').addClass('hidden');
 	}
 
 
@@ -57,11 +60,15 @@ var finalAverage = function () {
 
 
 
-calculateAverage.addEventListener('click', finalAverage, false)
-addGradeBtn.addEventListener('click', pushGrade, false);
-saveBtn.addEventListener('click', removeDisable, false);
-saveBtn.addEventListener('click', pushName, false);
+//calculateAverage.addEventListener('click', finalAverage, false)
+calculateAverageButton.on('click', finalAverage);
+//addGradeButton.addEventListener('click', pushGrade, false);
+addGradeButton.on('click', pushGrade);
+//saveButton.addEventListener('click', removeDisable, false);
+saveButton.on('click', removeDisable);
+//saveButton.addEventListener('click', pushName, false);
+saveButton.on('click', pushName);
 
-console.log(saveBtn);
-console.log(addGradeBtn);
-console.log(calculateAverage);
+console.log(saveButton);
+console.log(addGradeButton);
+console.log(calculateAverageButton);

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple Simon</title>
+    <style>
+        .color {
+            background-color: green;
+        }
+    </style>
+</head>
+<body>
+    <button class ="buttons" id="red" type="button" data-value="1">1</button>
+    <button class ="buttons" id="blue" type="button" data-value="2">2</button>
+    <button class ="buttons" id="yellow" type="button" data-value="3">3</button>
+    <button class ="buttons" id="green" type="button" data-value="4">4</button>
+    <button id="start" class ="start" type="button" class="start">start</button>
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script>
+        var solution = [];
+        var buttons = $('.buttons');
+        var i = 0;
+
+
+        function randomNumber(amount) {
+            var random = Math.floor(Math.random() * (amount) + 1);
+            return random;
+        }
+
+        $('#start').click(function() {
+            solution = [];
+            i = 0;
+            solution.push(randomNumber(4));
+            console.log(solution);
+        });
+        
+        buttons.each(function() {
+            $(this).click(function() {
+                    if (solution[i] == $(this).data('value')) {
+                        i ++;
+                        console.log("success.");
+                        if (i == solution.length) {
+                            solution.push(randomNumber(4));
+                            i = 0;
+                            console.log(solution);
+                        }
+                    } else {
+                        i = 0;
+                        solution = [];
+                        console.log("failure.");
+                    } 
+            });
+        });
+
+        $('#red').on('click', function(){
+
+        });
+
+        $('#blue').on('click', function(){
+            
+        });
+
+        $('#green').on('click', function(){
+            
+        });
+
+        $('#yellow').on('click', function(){
+            
+        });
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script src="http://code.jquery.com/jquery-1.11.0.js"></script>
+	<script type="text/javascript">
+		var getRandomIntInclusive = function(min, max) {
+		  return Math.floor(Math.random() * (max - min + 1)) + min;
+		};
+
+		var randomNumbers = []
+		var j = 1;
+
+		var generateRandomNumber = function (min, max) {
+			do {
+				randomNumbers.push(getRandomIntInclusive(min, max));
+		 	
+			} while(j < randomNumbers.length)
+			j++;
+		};
+		console.log(generateRandomNumber(1, 4));
+		//$(document).ready(function (generateRandomNumber);	
+
+	</script>
+
+</head>
+<body>
+	<button id="red"></button>
+	<button id="blue"></button>
+	<button id="green"></button>
+	<button id="yellow"></button>
+</body>
+</html>

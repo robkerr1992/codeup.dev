@@ -62,12 +62,17 @@
 		})
 
 		$('#clicker').on('click', function() {
-		$('dd').toggleClass('invisible');
+			$('dd').slideToggle();
 			
 		});
 
+		$('h3').on('click', function(){
+			$(this).next().slideToggle();
+		})
+
+
 		$('li').on('click', function() {
-		$(this).parent('ul').addClass('invisible');
+			$(this).parent('ul').slideUp();
 			
 		});
 	</script>
