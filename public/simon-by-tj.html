@@ -26,13 +26,32 @@
             return random;
         }
 
+
+        function colorGenerator(array) {
+            array.forEach(function () {
+                switch (array[i]) {
+                    case 1:
+                        //code that makes panels blink
+                        break;
+                    case 2:
+                        //code that makes panels blink
+                        break;
+                    case 3:
+                        //code that makes panels blink
+                        break;
+                    case 4:
+                        //code that makes panels blink
+                        break;
+                };
+            });
+        };
+
         $('#start').click(function() {
             solution = [];
             i = 0;
             solution.push(randomNumber(4));
             console.log(solution);
         });
-        
         buttons.each(function() {
             $(this).click(function() {
                     if (solution[i] == $(this).data('value')) {
@@ -42,6 +61,7 @@
                             solution.push(randomNumber(4));
                             i = 0;
                             console.log(solution);
+                            //colorGenerator(solution);
                         }
                     } else {
                         i = 0;
@@ -51,21 +71,42 @@
             });
         });
 
-        $('#red').on('click', function(){
 
-        });
 
-        $('#blue').on('click', function(){
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        // $('#red').on('click', function(){
+
+        // });
+
+        // $('#blue').on('click', function(){
             
-        });
+        // });
 
-        $('#green').on('click', function(){
+        // $('#green').on('click', function(){
             
-        });
+        // });
 
-        $('#yellow').on('click', function(){
+        // $('#yellow').on('click', function(){
             
-        });
+        // });
 
 
     </script>
