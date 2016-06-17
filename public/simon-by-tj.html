@@ -6,14 +6,25 @@
         .color {
             background-color: green;
         }
+
+        .buttons {
+            width: 100px;
+            height: 100px;
+
+            /*background-image: url('/img/placekitten100x100.jpg');*/
+        }
+
+        img {
+            opacity: .6;
+        }
     </style>
 </head>
 <body>
-    <button class ="buttons" id="red" type="button" data-value="1">1</button>
-    <button class ="buttons" id="blue" type="button" data-value="2">2</button>
-    <button class ="buttons" id="yellow" type="button" data-value="3">3</button>
-    <button class ="buttons" id="green" type="button" data-value="4">4</button>
-    <button id="start" class ="start" type="button" class="start">start</button>
+    <a class ="buttons" id="red" type="button" data-value="1"><img id="1" src="/img/placekitten100x100.jpg"></a>
+    <a class ="buttons" id="blue" type="button" data-value="2"><img id="2" src="/img/placekitten100x100.jpg"></a></a>
+    <a class ="buttons" id="yellow" type="button" data-value="3"><img id="3" src="/img/placekitten100x100.jpg"></a></a>
+    <a class ="buttons" id="green" type="button" data-value="4"><img id="4" src="/img/placekitten100x100.jpg"></a></a>
+    <a id="start" class ="start" type="button" class="start">start</a>
     <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
     <script>
         var solution = [];
@@ -26,21 +37,37 @@
             return random;
         }
 
-
+        //change set interval function
         function colorGenerator(array) {
             array.forEach(function () {
-                switch (array[i]) {
-                    case 1:
-                        //code that makes panels blink
+                switch (this.value) {
+                    case '1':
+                        $('#1').attr('src', "/img/placecage100x100.jpg");
+                        setInterval(function() {
+                            $('#1').attr('src', "/img/placekitten100x100.jpg");
+                        }, 200);
+                        console.log('1');
                         break;
-                    case 2:
-                        //code that makes panels blink
+                    case '2':
+                        $('#2').attr('src', "/img/placecage100x100.jpg");
+                        setInterval(function() {
+                            $('#2').attr('src', "/img/placekitten100x100.jpg");
+                        }, 200);
+                        console.log('2');
                         break;
-                    case 3:
-                        //code that makes panels blink
+                    case '3':
+                        $('#3').attr('src', "/img/placecage100x100.jpg");
+                        setInterval(function() {
+                            $('#3').attr('src', "/img/placekitten100x100.jpg");
+                        }, 200);
+                        console.log('3');
                         break;
-                    case 4:
-                        //code that makes panels blink
+                    case '4':
+                        $('#4').attr('src', "/img/placecage100x100.jpg");
+                        setInterval(function() {
+                            $('#4').attr('src', "/img/placekitten100x100.jpg");
+                        }, 200);
+                        console.log('4');
                         break;
                 };
             });
@@ -61,7 +88,7 @@
                             solution.push(randomNumber(4));
                             i = 0;
                             console.log(solution);
-                            //colorGenerator(solution);
+                            colorGenerator(solution);
                         }
                     } else {
                         i = 0;
@@ -72,41 +99,45 @@
         });
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        // $('#red').on('click', function(){
-
-        // });
-
-        // $('#blue').on('click', function(){
+        $('#red').on('click', function(){
             
-        // });
-
-        // $('#green').on('click', function(){
+                $('#1').attr('src', "/img/placecage100x100.jpg");
+                setInterval(function() {
+                    $('#1').attr('src', "/img/placekitten100x100.jpg");
+                }, 180);
+                //console.log('itworks');
             
-        // });
+        });
 
-        // $('#yellow').on('click', function(){
-            
-        // });
+        $('#blue').on('click', function(){
+         
+                $('#2').attr('src', "/img/placecage100x100.jpg");
+                setInterval(function() {
+                    $('#2').attr('src', "/img/placekitten100x100.jpg");
+                }, 180);
+                //console.log('itworks');
+        
+        });
+
+        $('#yellow').on('click', function(){
+       
+                $('#3').attr('src', "/img/placecage100x100.jpg");
+                setInterval(function() {
+                    $('#3').attr('src', "/img/placekitten100x100.jpg");
+                }, 180);
+                //console.log('itworks');
+
+        });
+
+        $('#green').on('click', function(){
+
+                $('#4').attr('src', "/img/placecage100x100.jpg");
+                setInterval(function() {
+                    $('#4').attr('src', "/img/placekitten100x100.jpg");
+                }, 180);
+                //console.log('itworks');
+
+        });
 
 
     </script>
