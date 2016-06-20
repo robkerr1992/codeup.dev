@@ -14,9 +14,14 @@
             /*background-image: url('/img/placekitten100x100.jpg');*/
         }
 
+        img:hover {
+            content: url("/img/placecage100x100.jpg");
+        }
+
         img {
             opacity: .6;
         }
+
     </style>
 </head>
 <body>
@@ -37,107 +42,126 @@
             return random;
         }
 
-        //change set interval function
-        function colorGenerator(array) {
-            array.forEach(function () {
-                switch (this.value) {
-                    case '1':
-                        $('#1').attr('src', "/img/placecage100x100.jpg");
-                        setInterval(function() {
-                            $('#1').attr('src', "/img/placekitten100x100.jpg");
-                        }, 200);
-                        console.log('1');
-                        break;
-                    case '2':
-                        $('#2').attr('src', "/img/placecage100x100.jpg");
-                        setInterval(function() {
-                            $('#2').attr('src', "/img/placekitten100x100.jpg");
-                        }, 200);
-                        console.log('2');
-                        break;
-                    case '3':
-                        $('#3').attr('src', "/img/placecage100x100.jpg");
-                        setInterval(function() {
-                            $('#3').attr('src', "/img/placekitten100x100.jpg");
-                        }, 200);
-                        console.log('3');
-                        break;
-                    case '4':
-                        $('#4').attr('src', "/img/placecage100x100.jpg");
-                        setInterval(function() {
-                            $('#4').attr('src', "/img/placekitten100x100.jpg");
-                        }, 200);
-                        console.log('4');
-                        break;
-                };
-            });
-        };
 
-        $('#start').click(function() {
-            solution = [];
-            i = 0;
-            solution.push(randomNumber(4));
-            console.log(solution);
-        });
-        buttons.each(function() {
-            $(this).click(function() {
-                    if (solution[i] == $(this).data('value')) {
-                        i ++;
-                        console.log("success.");
-                        if (i == solution.length) {
-                            solution.push(randomNumber(4));
-                            i = 0;
-                            console.log(solution);
-                            colorGenerator(solution);
-                        }
-                    } else {
+        var colorGenerator = function () {
+            setInterval( function(){
+                var i;
+                if (i < solution.length){
+                    i++
+
+                    if (solution[i] == ){
+
+                    }
+
+                } else {
+                    i = 0
+                    break;
+                }
+
+                solution[i] 
+                    switch (number) {
+                        case :
+                            setTimeout(function() {
+                                $('#1').attr('src', "/img/placecage100x100.jpg");
+                            }, 500);
+                            setTimeout(function() {
+                                $('#1').attr('src', "/img/placekitten100x100.jpg");
+                            }, 2000);
+                            //console.log('1');
+                            break;
+                        case 2:
+                            setTimeout(function() {
+                                $('#2').attr('src', "/img/placecage100x100.jpg");
+                            }, 500);
+                            setTimeout(function() {
+                                $('#2').attr('src', "/img/placekitten100x100.jpg");
+                            }, 2000);
+                            //console.log('2');
+                            break;
+                        case 3:
+                            setTimeout(function() {
+                                $('#3').attr('src', "/img/placecage100x100.jpg");
+                            }, 500);
+                            setTimeout(function() {
+                                $('#3').attr('src', "/img/placekitten100x100.jpg");
+                            }, 2000);
+                            //console.log('3');
+                            break;
+                        case 4:
+                            setTimeout(function() {
+                                $('#4').attr('src', "/img/placecage100x100.jpg");
+                            }, 500);
+                            setTimeout(function() {
+                                $('#4').attr('src', "/img/placekitten100x100.jpg");
+                            }, 2000);
+                            //console.log('4');
+                            break;
+                    };
+                });
+            }, 1000);
+
+    };
+    $('#start').click(function() {
+        solution = [];
+        i = 0;
+        solution.push(randomNumber(4));
+        console.log(solution);
+    });    
+    buttons.each(function() {
+        $(this).click(function() {
+                if (solution[i] == $(this).data('value')) {
+                    i ++;
+                    console.log("success.");
+                    if (i == solution.length) {
+                        solution.push(randomNumber(4));
                         i = 0;
-                        solution = [];
-                        console.log("failure.");
-                    } 
+                        console.log(solution);
+                        colorGenerator();
+                    }
+                } else {
+                    i = 0;
+                    solution = [];
+                    console.log("failure.");
+                } ;
             });
         });
 
 
-        $('#red').on('click', function(){
+        // $('#red').on('click', function(){            
+        //         $('#1').attr('src', "/img/placecage100x100.jpg");
+        //         setInterval(function() {
+        //             $('#1').attr('src', "/img/placekitten100x100.jpg");
+        //         }, 180);
+        //         //console.log('itworks');
             
-                $('#1').attr('src', "/img/placecage100x100.jpg");
-                setInterval(function() {
-                    $('#1').attr('src', "/img/placekitten100x100.jpg");
-                }, 180);
-                //console.log('itworks');
-            
-        });
+        // });
 
-        $('#blue').on('click', function(){
-         
-                $('#2').attr('src', "/img/placecage100x100.jpg");
-                setInterval(function() {
-                    $('#2').attr('src', "/img/placekitten100x100.jpg");
-                }, 180);
-                //console.log('itworks');
+        // $('#blue').on('click', function(){
+        //         $('#2').attr('src', "/img/placecage100x100.jpg");
+        //         setInterval(function() {
+        //             $('#2').attr('src', "/img/placekitten100x100.jpg");
+        //         }, 180);
+        //         //console.log('itworks');
         
-        });
+        // });
 
-        $('#yellow').on('click', function(){
-       
-                $('#3').attr('src', "/img/placecage100x100.jpg");
-                setInterval(function() {
-                    $('#3').attr('src', "/img/placekitten100x100.jpg");
-                }, 180);
-                //console.log('itworks');
+        // $('#yellow').on('click', function(){      
+        //         $('#3').attr('src', "/img/placecage100x100.jpg");
+        //         setInterval(function() {
+        //             $('#3').attr('src', "/img/placekitten100x100.jpg");
+        //         }, 180);
+        //         //console.log('itworks');
 
-        });
+        // });
 
-        $('#green').on('click', function(){
+        // $('#green').on('click', function(){
+        //         $('#4').attr('src', "/img/placecage100x100.jpg");
+        //         setInterval(function() {
+        //             $('#4').attr('src', "/img/placekitten100x100.jpg");
+        //         }, 180);
+        //         //console.log('itworks');
 
-                $('#4').attr('src', "/img/placecage100x100.jpg");
-                setInterval(function() {
-                    $('#4').attr('src', "/img/placekitten100x100.jpg");
-                }, 180);
-                //console.log('itworks');
-
-        });
+        // });
 
 
     </script>

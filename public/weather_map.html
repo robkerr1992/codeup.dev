@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+	h1, h2 {
+		clear: left;
+	}
+
+	.weatherDays {
+		float: left;
+		height: 200px;
+		width: 20%;
+		border: 2px solid black;
+		background-color: papayawhip;
+		text-align: center;
+	}
+	input, button {
+		clear: left;
+		float: left;
+	}
+
+
+
+
+
+
+
+	</style>
+</head>
+<body>
+	<h1>Weather Application</h1>
+	<h2>San Antonio</h2>
+
+
+
+	<table id="day0" class="weatherDays">
+	    <thead>
+	        <tr>
+	            <th id="minMax0"></th>
+	        </tr>
+	    </thead>
+	    <tbody id="weatherData0"></tbody>
+	</table>
+	<table id="day1" class="weatherDays">
+	    <thead>
+	        <tr>
+	            <th id="minMax1"></th>
+	        </tr>
+	    </thead>
+	    <tbody id="weatherData1"></tbody>
+	</table>
+	<table id="day2" class="weatherDays">
+	    <thead>
+	        <tr>
+	            <th id="minMax2"></th>
+	        </tr>
+	    </thead>
+	    <tbody id="weatherData2"></tbody>
+	</table>
+
+	<input id="latitude" type="text" name="lat" placeholder="Latitude"></input>
+	<input id="longitude" type="text" name="long" placeholder="Longitude"></input>
+	<button>Submit</button>
+
+
+	<!-- api.openweathermap.org/data/2.5/forecast/daily?id=4726206&cnt=3 -->
+
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+	<script type="text/javascript">
+
+
+		$.get("http://api.openweathermap.org/data/2.5/forecast/daily", {
+			//id : 4726206,
+			cnt : 3,
+			APPID : 'e7a7ed7d67649307e6479168e09d2bd8',
+			units : "Imperial",
+			lat: 29.426515,
+			lon:-98.501172
+
+
+		}).done(function (weather){
+			console.log(weather);
+			
+			for (var i = 0; i < weather.list.length; i++) {
+				//var tableData='';
+				tableData = "<tr><td><strong>" + weather.list[i].temp.max + "/" + weather.list[i].temp.min + "</strong></td></tr><tr><td><img src=http://openweathermap.org/img/w/" + weather.list[i].weather[0].icon +".png></td></tr><tr><td><strong>Clouds:</strong> " + weather.list[i].weather[0].description + "</td></tr><tr><td><strong>Humidity:</strong> " + weather.list[i].humidity + "</td></tr><tr><td><strong>Wind:</strong> " + weather.list[i].speed + "</td></tr><tr><td><strong>Pressure:</strong> " + weather.list[i].pressure + "</td></tr>"
+				console.log(tableData);
+				switch(i) {
+					case 0 :
+						$('#weatherData0').html(tableData);
+						break;
+					case 1 :
+						$('#weatherData1').html(tableData);
+						break;
+					case 2 :
+						$('#weatherData2').html(tableData);
+						break;
+
+
+				};
+				//$('#weatherData0').html(tableData);
+			};
+
+		});
+		$('button').on('click', function(){
+			var longitude = $('#longitude').val();
+			var latitude = $('#latitude').val();
+			$.get("http://api.openweathermap.org/data/2.5/forecast/daily", {
+				cnt: 3,
+				APPID : 'e7a7ed7d67649307e6479168e09d2bd8',
+				units : "Imperial",
+				lat: latitude,
+				lon: longitude
+
+
+			}).done(function (weather){
+			console.log(weather);
+			
+			for (var i = 0; i < weather.list.length; i++) {
+				//var tableData='';
+				tableData = "<tr><td><strong>" + weather.list[i].temp.max + "/" + weather.list[i].temp.min + "</strong></td></tr><tr><td><img src=http://openweathermap.org/img/w/" + weather.list[i].weather[0].icon +".png></td></tr><tr><td><strong>Clouds:</strong> " + weather.list[i].weather[0].description + "</td></tr><tr><td><strong>Humidity:</strong> " + weather.list[i].humidity + "</td></tr><tr><td><strong>Wind:</strong> " + weather.list[i].speed + "</td></tr><tr><td><strong>Pressure:</strong> " + weather.list[i].pressure + "</td></tr>"
+				console.log(tableData);
+				switch(i) {
+					case 0 :
+						$('#weatherData0').html(tableData);
+						break;
+					case 1 :
+						$('#weatherData1').html(tableData);
+						break;
+					case 2 :
+						$('#weatherData2').html(tableData);
+						break;
+
+
+				};
+				//$('#weatherData0').html(tableData);
+			};
+
+		});
+	});
+	</script>
+</body>
+</html>

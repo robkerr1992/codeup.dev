@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<h2>Oh look, a blog.</h2>
+	<div id="posts"></div>
+	<div id="goodposts"></div>
+	<div id="badposts"></div>
+
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+	<script type="text/javascript">
+		$.get('/data/blog.json', {
+
+		}).done(function(blog){
+			blogData = '';
+			blog.forEach(function (array, i){
+				blogData += "<tr><td>" + blog[i].title + "</td><td>" + blog[i].content + "</td><td>" + blog[i].categories.join(",") + "</td><td>" + blog[i].date + "</td></tr>"
+				$('#posts').html(blogData);
+
+			});
+
+		});
+
+
+	</script>
+</body>
+</html>
