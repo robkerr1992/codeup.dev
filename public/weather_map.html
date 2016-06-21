@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+	<title>You're done, Son.</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 	<style type="text/css">
-	h1, h2 {
+	h1{
 		clear: left;
+		text-align: center;
 	}
 
 	.weatherDays {
@@ -14,12 +16,26 @@
 		border: 2px solid black;
 		background-color: papayawhip;
 		text-align: center;
+		margin-left: 10%;
+		margin-bottom: 4%;
 	}
-	input, button {
+	button {
 		clear: left;
-		float: left;
+		margin-left: 43.5%;
+		height: 35px;
+	}
+	#map-canvas {
+		width: 100%;
+		height: 400px;
+		float: center;
 	}
 
+	body {
+		background-image: url("/img/winter.png");
+	}
+	#clearedLeft {
+		clear: left;
+	}
 
 
 
@@ -28,47 +44,35 @@
 
 	</style>
 </head>
+
 <body>
-	<h1>Weather Application</h1>
-	<h2>San Antonio</h2>
+
+	<div class="container-fluid">
+
+		<h1>Weather Application</h1>
+`		<div class="row" id="weather"></div>
+		<select id="days" type="number"></select>
+		<button>Click Me</button>
+		<div id="map-canvas"></div> 
+		
+	
+
+	</div>
+	<input id="latitude" type="text" name="lat" placeholder="Latitude" hidden></input>
+	<input id="longitude" type="text" name="long" placeholder="Longitude" hidden></input>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAz90rddz2E63KY0kJtl5MTGLxXM5SMYgY"></script>
+		<script src="/scripts/moment.js" type="text/javascript"></script>
+		<script type="text/javascript">
+			var selectData = "";
+		for (var i = 1; i <= 16; i++) {
+			selectData += "<option value="+ i + ">" + i + "</option>"
+			console.log(i);
 
 
+		 }
+		 $('#days').html(selectData);
 
-	<table id="day0" class="weatherDays">
-	    <thead>
-	        <tr>
-	            <th id="minMax0"></th>
-	        </tr>
-	    </thead>
-	    <tbody id="weatherData0"></tbody>
-	</table>
-	<table id="day1" class="weatherDays">
-	    <thead>
-	        <tr>
-	            <th id="minMax1"></th>
-	        </tr>
-	    </thead>
-	    <tbody id="weatherData1"></tbody>
-	</table>
-	<table id="day2" class="weatherDays">
-	    <thead>
-	        <tr>
-	            <th id="minMax2"></th>
-	        </tr>
-	    </thead>
-	    <tbody id="weatherData2"></tbody>
-	</table>
-
-	<input id="latitude" type="text" name="lat" placeholder="Latitude"></input>
-	<input id="longitude" type="text" name="long" placeholder="Longitude"></input>
-	<button>Submit</button>
-
-
-	<!-- api.openweathermap.org/data/2.5/forecast/daily?id=4726206&cnt=3 -->
-
-
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-	<script type="text/javascript">
 
 
 		$.get("http://api.openweathermap.org/data/2.5/forecast/daily", {
@@ -77,38 +81,93 @@
 			APPID : 'e7a7ed7d67649307e6479168e09d2bd8',
 			units : "Imperial",
 			lat: 29.426515,
-			lon:-98.501172
+			lon: -98.501172
 
 
 		}).done(function (weather){
 			console.log(weather);
-			
-			for (var i = 0; i < weather.list.length; i++) {
-				//var tableData='';
-				tableData = "<tr><td><strong>" + weather.list[i].temp.max + "/" + weather.list[i].temp.min + "</strong></td></tr><tr><td><img src=http://openweathermap.org/img/w/" + weather.list[i].weather[0].icon +".png></td></tr><tr><td><strong>Clouds:</strong> " + weather.list[i].weather[0].description + "</td></tr><tr><td><strong>Humidity:</strong> " + weather.list[i].humidity + "</td></tr><tr><td><strong>Wind:</strong> " + weather.list[i].speed + "</td></tr><tr><td><strong>Pressure:</strong> " + weather.list[i].pressure + "</td></tr>"
+				var tableData = '';
+			weather.list.forEach(function (element, i) {
+
+
+				if (i % 3 == 0 && i !==0) {
+				tableData += "<div id='col-mid-4' class='weatherDays clearedLeft'><p>" + moment(weather.list[i].dt*1000).format('MMM Do YY') 
+				+ "<br><strong>" + weather.list[i].temp.max + "/" + weather.list[i].temp.min + "</strong><img src=http://openweathermap.org/img/w/"  +weather.list[i].weather[0].icon +".png>"
+				+ "<br><strong>Clouds:</strong> " + weather.list[i].weather[0].description
+				+"<br><strong>Humidity:</strong> " + weather.list[i].humidity
+				+"<br><strong>Wind:</strong> " + weather.list[i].speed
+				+"<br><strong>Pressure:</strong> " + weather.list[i].pressure + "</p></div>"
 				console.log(tableData);
-				switch(i) {
-					case 0 :
-						$('#weatherData0').html(tableData);
-						break;
-					case 1 :
-						$('#weatherData1').html(tableData);
-						break;
-					case 2 :
-						$('#weatherData2').html(tableData);
-						break;
+				} else {
 
-
+					var bodyData ='';
+				tableData += "<div id='col-mid-4' class='weatherDays'><p>" + moment(weather.list[i].dt*1000).format('MMM Do YY') 
+				+ "<br><strong>" + weather.list[i].temp.max + "/" + weather.list[i].temp.min + "</strong><img src=http://openweathermap.org/img/w/"  +weather.list[i].weather[0].icon +".png>"
+				+ "<br><strong>Clouds:</strong> " + weather.list[i].weather[0].description
+				+"<br><strong>Humidity:</strong> " + weather.list[i].humidity
+				+"<br><strong>Wind:</strong> " + weather.list[i].speed
+				+"<br><strong>Pressure:</strong> " + weather.list[i].pressure + "</p></div>"
+				console.log(tableData);
+			
 				};
-				//$('#weatherData0').html(tableData);
-			};
+				$('#weather').html(tableData);
+
+			});
 
 		});
+
+/// Google Maps API
+
+        "use strict";
+
+        // Set our map options
+        var mapOptions = {
+            // Set the zoom level
+            zoom: 5,
+
+            // This sets the center of the map at our location
+            center: {
+                lat:  29.426515,
+                lng: -98.501172
+            }
+        };
+
+        // Render the map
+        var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
+
+        var marker = new google.maps.Marker({
+  			draggable: true,
+  			position: {
+  				lat:  29.426515,
+                lng: -98.501172
+  			
+  			}, 
+  			map: map,
+  			title: "Your location"
+  });
+
+
+
+
+
+
+
+
+
+
+//Listerners	
+		google.maps.event.addListener(marker, 'dragend', function(event){
+       		document.getElementById("latitude").value = event.latLng.lat();
+       		document.getElementById("longitude").value = event.latLng.lng();
+		});		
+
+
+
 		$('button').on('click', function(){
-			var longitude = $('#longitude').val();
-			var latitude = $('#latitude').val();
+			var longitude = parseFloat($('#longitude').val());
+			var latitude = parseFloat($('#latitude').val());
 			$.get("http://api.openweathermap.org/data/2.5/forecast/daily", {
-				cnt: 3,
+				cnt: $('#days').val(),
 				APPID : 'e7a7ed7d67649307e6479168e09d2bd8',
 				units : "Imperial",
 				lat: latitude,
@@ -116,30 +175,48 @@
 
 
 			}).done(function (weather){
+			console.log(weather);			//redinfes map center on button press
+			map.setCenter({
+				zoom: 10,
+				lat: latitude,
+				lng: longitude
+			});
+
 			console.log(weather);
-			
-			for (var i = 0; i < weather.list.length; i++) {
-				//var tableData='';
-				tableData = "<tr><td><strong>" + weather.list[i].temp.max + "/" + weather.list[i].temp.min + "</strong></td></tr><tr><td><img src=http://openweathermap.org/img/w/" + weather.list[i].weather[0].icon +".png></td></tr><tr><td><strong>Clouds:</strong> " + weather.list[i].weather[0].description + "</td></tr><tr><td><strong>Humidity:</strong> " + weather.list[i].humidity + "</td></tr><tr><td><strong>Wind:</strong> " + weather.list[i].speed + "</td></tr><tr><td><strong>Pressure:</strong> " + weather.list[i].pressure + "</td></tr>"
+				var tableData = '';
+			weather.list.forEach(function (element, i) {
+
+
+				if (i % 3 == 0 && i !==0) {
+				tableData += "<div id='col-mid-4' class='weatherDays clearedLeft'><p>" + moment(weather.list[i].dt*1000).format('MMM Do YY') 
+				+ "<br><strong>" + weather.list[i].temp.max + "/" + weather.list[i].temp.min + "</strong><img src=http://openweathermap.org/img/w/"  +weather.list[i].weather[0].icon +".png>"
+				+ "<br><strong>Clouds:</strong> " + weather.list[i].weather[0].description
+				+"<br><strong>Humidity:</strong> " + weather.list[i].humidity
+				+"<br><strong>Wind:</strong> " + weather.list[i].speed
+				+"<br><strong>Pressure:</strong> " + weather.list[i].pressure + "</p></div>"
 				console.log(tableData);
-				switch(i) {
-					case 0 :
-						$('#weatherData0').html(tableData);
-						break;
-					case 1 :
-						$('#weatherData1').html(tableData);
-						break;
-					case 2 :
-						$('#weatherData2').html(tableData);
-						break;
+				} else {
 
-
+					var bodyData ='';
+				tableData += "<div id='col-mid-4' class='weatherDays'><p>" + moment(weather.list[i].dt*1000).format('MMM Do YY') 
+				+ "<br><strong>" + weather.list[i].temp.max + "/" + weather.list[i].temp.min + "</strong><img src=http://openweathermap.org/img/w/"  +weather.list[i].weather[0].icon +".png>"
+				+ "<br><strong>Clouds:</strong> " + weather.list[i].weather[0].description
+				+"<br><strong>Humidity:</strong> " + weather.list[i].humidity
+				+"<br><strong>Wind:</strong> " + weather.list[i].speed
+				+"<br><strong>Pressure:</strong> " + weather.list[i].pressure + "</p></div>"
+				console.log(tableData);
+			
 				};
-				//$('#weatherData0').html(tableData);
-			};
+				$('#weather').html(tableData);
 
+			});
+
+
+			});			
 		});
-	});
+
+
+
 	</script>
 </body>
 </html>
