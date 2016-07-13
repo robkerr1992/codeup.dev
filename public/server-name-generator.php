@@ -1,15 +1,26 @@
 <?php
 
-$adjectives = ['Adventurous', 'Steadfast', 'Draconian', 'Belligerent', 'Trustworthy', 'Depressed', 'Bamboozled', 'Pertinent', 'Majestic', 'Scrawny'];
-$nouns = ['Silverback', 'Throne', 'Goose', 'Lion', 'Berserker', 'Oracle', 'Warlock', 'Jester', 'Ruler', 'Combatant' ];
-
-
-
+    $adjectives = ['Angry', 'Steadfast', 'Draconian', 'Belligerent', 'Trustworthy', 'Depressed', 'Bamboozled', 'Persistent', 'Majestic', 'Scrawny'];
+    $nouns = ['Silverback', 'Penguin', 'Goose', 'Lion', 'Berserker', 'Oracle', 'Warlock', 'Jester', 'Ruler', 'Accountant' ];
+    function randomElement($array) {
+        $number = mt_rand(0,9);
+        return $array[$number];
+    }
+//    randomElement($adjectives);
+//    randomElement($nouns);
 
 ?>
-/**
- * Created by PhpStorm.
- * User: MacBookPro
- * Date: 7/13/16
- * Time: 2:46 PM
- */
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Random Name Generator</title>
+</head>
+<body>
+<h1>Look it's your new name!</h1>
+<ol>
+    <h1><?php echo randomElement($adjectives) . " " . randomElement($nouns) ?></h1>
+
+</ol>
+</body>
+</html>
