@@ -19,7 +19,7 @@
 <body>
 <h1>Look it's your new name!</h1>
 <ol>
-    <h1><?php echo randomElement($adjectives) . " " . randomElement($nouns) ?></h1>
+    <h1><?= randomElement($adjectives) . " " . randomElement($nouns) ?></h1>
 
 </ol>
 </body>
