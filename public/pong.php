@@ -10,16 +10,14 @@ function pageController()
     };
 
     return $data;
-}
-
-;
+};
 extract(pageController());
 ?>
 
 
 <!DOCTYPE html>
 <head>
-    <title>Ping</title>
+    <title>Pong</title>
 </head>
 <body>
 <h1>Number of Hits:<?= $count ?></h1>

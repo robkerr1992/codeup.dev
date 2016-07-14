@@ -10,9 +10,7 @@ function pageController()
     };
 
     return $data;
-}
-
-;
+};
 extract(pageController());
 ?>
 
