@@ -1,5 +1,20 @@
 <?php
+function authorization ($username, $password) {
+    if ($username === 'guest' && $password === 'password' ) {
+        header('Location: authorized.php');
+        exit('Authorized');
+    } else {
+        header('Location: nope.php');
+        exit('Nice try, hombre.');
+    }
 
+}
+var_dump($_POST);
+
+
+if ($_POST) {
+    authorization($_POST['username'], $_POST['password']);
+};
 
 ?>
 <!doctype html>
@@ -13,10 +28,11 @@
 </head>
 <body>
 
-    <form method="POST">
-        <input type="text" name="name"><br>
-        <label>Number</label>
-        <input type="text" name="number"><br>
+    <form method="POST" action="login-exercise.php">
+        <label>Username</label>
+        <input type="text" name="username"><br>
+        <label>Password</label>
+        <input type="text" name="password"><br>
         <input type="submit">
     </form>
 
