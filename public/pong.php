@@ -1,14 +1,10 @@
 <?php
+require_once '../src/Input.php';
 function pageController()
 {
     var_dump($_GET);
     $data = array();
-    if (isset($_GET['count'])) {
-        $data['count'] = $_GET['count'];
-    } else {
-        $data['count'] = 0;
-    };
-
+    $data['count'] = Input::get('count', 0);
     return $data;
 };
 extract(pageController());
@@ -20,12 +16,7 @@ extract(pageController());
     <title>Pong</title>
 </head>
 <body>
-<h1>Number of Hits:<?= $count ?></h1>
-<p>
-    <a href="ping.php?count=<?= $count + 1 ?>">Hit</a>
-</p>
-<p>
-    <a href="pong.php?count=0">Miss</a>
-</p>
-
+<h1>Number of Hits:<?= (int)$count; ?></h1>
+<a href="ping.php?count=<?= (int)($count + 1); ?>">Hit</a>
+<a href="pong.php?count=0">Miss</a>
 </body>
